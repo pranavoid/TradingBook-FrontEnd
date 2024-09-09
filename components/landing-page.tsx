@@ -32,7 +32,7 @@ export function LandingPage() {
                     Manage Your Investments with Trading Book
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Track your stocks, mutual funds, ETFs, and other investments in one place.
+                    Track your stocks, mutual funds, and other investments in one place.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -47,7 +47,7 @@ export function LandingPage() {
                 </div>
               </div>
               <img
-                src="/placeholder.svg"
+                src="/landingpageplaceholder.svg"
                 width={600}
                 height={600}
                 alt="Hero"
