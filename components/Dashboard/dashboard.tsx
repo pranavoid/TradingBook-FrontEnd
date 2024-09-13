@@ -48,7 +48,10 @@ function MainContent() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
-                    +20.1% from last month
+                    <span className="flex items-center gap-1 text-sm font-bold text-meta-3">
+                      +20.1%
+                    </span>
+                    from last month
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -65,7 +68,7 @@ function MainContent() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
-                    +10% from last month
+                    <span className="flex items-center gap-1 text-sm font-bold text-meta-3">+10%</span> from last month
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -82,7 +85,7 @@ function MainContent() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
-                    +15% from last month
+                  <span className="flex items-center gap-1 text-sm font-bold text-meta-3">+15%</span> from last month
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -99,7 +102,7 @@ function MainContent() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-xs text-muted-foreground">
-                    +5% from last month
+                  <span className="flex items-center gap-1 text-sm font-bold text-meta-3">+5%</span> from last month
                   </div>
                 </CardContent>
                 <CardFooter>
@@ -122,6 +125,7 @@ function MainContent() {
             </CardHeader>
             <ChartOne />
           </Card>
+
           <Card className="col-span-2" x-chunk="dashboard-05-chunk-1">
             <CardHeader className="pb-3">
               <CardTitle>Recent Transactions</CardTitle>
@@ -188,8 +192,6 @@ function MainContent() {
               </Table>
             </CardContent>
           </Card>
-
-          {/* Chart Section - spans 1 column */}
         </div>
       </div>
     </main>

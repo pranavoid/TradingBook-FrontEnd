@@ -1,6 +1,7 @@
 import { ApexOptions } from "apexcharts";
 import React from "react";
 import dynamic from "next/dynamic";
+import { Button } from "../ui/button";
 
 const ReactApexChart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
@@ -18,8 +19,8 @@ const options: ApexOptions = {
       shadeIntensity: 0.1,
       opacityFrom: 0.7,
       opacityTo: 0.9,
-      gradientToColors : ["#FFFFFF"],      
-    }
+      gradientToColors: ["#FFFFFF"],
+    },
   },
   colors: ["#3C50E0"],
   chart: {
@@ -145,43 +146,46 @@ const ChartOne: React.FC = () => {
 
   return (
     <>
-      <div className="col-span-12 rounded-sm bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-        <div className="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap">
-          <div className="flex w-full flex-wrap gap-3 sm:gap-5">
-            <div className="flex min-w-47.5">
-              <span className="mr-2 mt-1 flex h-4 w-full max-w-4 items-center justify-center rounded-full border border-primary">
-                <span className="block h-2.5 w-full max-w-2.5 rounded-full bg-primary"></span>
-              </span>
-              <div className="w-full">
-                <p className="font-semibold text-primary">Invested Value</p>
-                <p className="text-sm font-medium">100000</p>
-              </div>
+      <div className="col-span-12 rounded-sm bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark sm:px-7.5 xl:col-span-8">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:flex-nowrap">
+          <div className="flex items-center gap-8">
+            <div className="flex items-center">
+              <p className="text-sm font-small mr-2">Invested Value:</p>
+              <p className="font-semibold text-primary">100000</p>
             </div>
-            <div className="flex min-w-47.5">
-              <span className="mr-2 mt-1 flex h-4 w-full max-w-4 items-center justify-center rounded-full border border-primary">
-                <span className="block h-2.5 w-full max-w-2.5 rounded-full bg-primary"></span>
+            <div className="flex items-center">
+              <p className="text-sm font-small mr-2">Total Returns:</p>
+              <p className="font-semibold text-primary">500000</p>
+              <span className="ml-3 text-sm font-bold text-meta-3">500%</span>
+              <span className="flex h-8 w-8 items-center justify-center">
+                <svg
+                  className="h-3 w-3 text-meta-3"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M5.07 19H19a2 2 0 0 0 1.75 -2.75L13.75 4a2 2 0 0 0 -3.5 0L3.25 16.25a2 2 0 0 0 1.75 2.75z"
+                    fill="currentColor"
+                  />
+                </svg>
               </span>
-              <div className="w-full">
-                <p className="font-semibold text-primary">Total Returns</p>
-                <p className="text-sm font-medium">500000</p>
-              </div>
             </div>
           </div>
           <div className="flex w-full max-w-45 justify-end">
-          <div className="inline-flex items-center rounded-md bg-whiter p-1.5 dark:bg-meta-4">
-            <button className="rounded bg-white px-3 py-1 text-xs font-medium text-black shadow-card hover:bg-white hover:shadow-card dark:bg-boxdark dark:text-white dark:hover:bg-boxdark">
-              Day
-            </button>
-            <button className="rounded px-3 py-1 text-xs font-medium text-black hover:bg-white hover:shadow-card dark:text-white dark:hover:bg-boxdark">
-              Week
-            </button>
-            <button className="rounded px-3 py-1 text-xs font-medium text-black hover:bg-white hover:shadow-card dark:text-white dark:hover:bg-boxdark">
-              Month
-            </button>
+            <div className="inline-flex items-center rounded-md p-1.5 ">
+              <Button variant={"outline"}>Day</Button>
+              <Button variant={"outline"}>Week</Button>
+              <Button variant={"outline"}>Month</Button>
+            </div>
           </div>
         </div>
-        </div>
-
         <div>
           <div id="chartOne" className="-ml-5">
             <ReactApexChart
