@@ -15,6 +15,7 @@ import {
   TableBody,
   TableCell,
 } from "@/components/ui/table";
+import ChartOne from "../Charts/ChartOne";
 
 export function Dashboard(): JSX.Element {
   return (
@@ -110,73 +111,86 @@ function MainContent() {
             </div>
           </CardContent>
         </Card>
-        {/* Recent Transactions Section */}
-        <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-1">
-          <CardHeader className="pb-3">
-            <CardTitle>Recent Transactions</CardTitle>
-            <CardDescription className="max-w-lg text-balance leading-relaxed">
-              View your recent investment transactions.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Type</TableHead>
-                  <TableHead>Symbol</TableHead>
-                  <TableHead>Shares</TableHead>
-                  <TableHead>Price</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Amount</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {/* Existing Transaction */}
-                <TableRow>
-                  <TableCell>Bought</TableCell>
-                  <TableCell>AAPL</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>$120.00</TableCell>
-                  <TableCell>June 1, 2024</TableCell>
-                  <TableCell>$1,200.00</TableCell>
-                </TableRow>
-                {/* Additional Entries */}
-                <TableRow>
-                  <TableCell>Sold</TableCell>
-                  <TableCell>MSFT</TableCell>
-                  <TableCell>5</TableCell>
-                  <TableCell>$250.00</TableCell>
-                  <TableCell>June 5, 2024</TableCell>
-                  <TableCell>$1,250.00</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Bought</TableCell>
-                  <TableCell>GOOGL</TableCell>
-                  <TableCell>8</TableCell>
-                  <TableCell>$1500.00</TableCell>
-                  <TableCell>June 10, 2024</TableCell>
-                  <TableCell>$12,000.00</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Sold</TableCell>
-                  <TableCell>AMZN</TableCell>
-                  <TableCell>3</TableCell>
-                  <TableCell>$3100.00</TableCell>
-                  <TableCell>June 15, 2024</TableCell>
-                  <TableCell>$9,300.00</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell>Bought</TableCell>
-                  <TableCell>TSLA</TableCell>
-                  <TableCell>4</TableCell>
-                  <TableCell>$720.00</TableCell>
-                  <TableCell>June 20, 2024</TableCell>
-                  <TableCell>$2,880.00</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
+
+        {/* New Section: Recent Transactions and Chart on the same row */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-8">
+          {/* Recent Transactions Section - spans 2 columns */}
+          <Card className="col-span-3">
+            <CardHeader className="pb-3">
+              <CardTitle>Total Investment</CardTitle>
+              <CardDescription>View your total investment.</CardDescription>
+            </CardHeader>
+            <ChartOne />
+          </Card>
+          <Card className="col-span-2" x-chunk="dashboard-05-chunk-1">
+            <CardHeader className="pb-3">
+              <CardTitle>Recent Transactions</CardTitle>
+              <CardDescription className="max-w-lg text-balance leading-relaxed">
+                View your recent investment transactions.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Type</TableHead>
+                    <TableHead>Symbol</TableHead>
+                    <TableHead>Shares</TableHead>
+                    <TableHead>Price</TableHead>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Amount</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {/* Existing Transaction */}
+                  <TableRow>
+                    <TableCell>Bought</TableCell>
+                    <TableCell>AAPL</TableCell>
+                    <TableCell>10</TableCell>
+                    <TableCell>$120.00</TableCell>
+                    <TableCell>June 1, 2024</TableCell>
+                    <TableCell>$1,200.00</TableCell>
+                  </TableRow>
+                  {/* Additional Entries */}
+                  <TableRow>
+                    <TableCell>Sold</TableCell>
+                    <TableCell>MSFT</TableCell>
+                    <TableCell>5</TableCell>
+                    <TableCell>$250.00</TableCell>
+                    <TableCell>June 5, 2024</TableCell>
+                    <TableCell>$1,250.00</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Bought</TableCell>
+                    <TableCell>GOOGL</TableCell>
+                    <TableCell>8</TableCell>
+                    <TableCell>$1500.00</TableCell>
+                    <TableCell>June 10, 2024</TableCell>
+                    <TableCell>$12,000.00</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Sold</TableCell>
+                    <TableCell>AMZN</TableCell>
+                    <TableCell>3</TableCell>
+                    <TableCell>$3100.00</TableCell>
+                    <TableCell>June 15, 2024</TableCell>
+                    <TableCell>$9,300.00</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Bought</TableCell>
+                    <TableCell>TSLA</TableCell>
+                    <TableCell>4</TableCell>
+                    <TableCell>$720.00</TableCell>
+                    <TableCell>June 20, 2024</TableCell>
+                    <TableCell>$2,880.00</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+
+          {/* Chart Section - spans 1 column */}
+        </div>
       </div>
     </main>
   );

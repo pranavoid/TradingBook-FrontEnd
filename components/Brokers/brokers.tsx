@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { LinkItem } from "./utils/utils";
+import { LinkItem } from "../utils/utils";
 
 const brokers = [
   { name: "Zerodha", logo: "/zerodha-kite-seeklogo.svg" },

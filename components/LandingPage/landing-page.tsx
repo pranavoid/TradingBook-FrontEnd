@@ -1,5 +1,5 @@
 import Link from "next/link"
-
+import Image from "next/image"
 export function LandingPage() {
   return (
     <div>
@@ -46,13 +46,14 @@ export function LandingPage() {
                   </Link>
                 </div>
               </div>
-              <img
+              <Image
                 src="/landingpageplaceholder.svg"
                 width={600}
                 height={600}
                 alt="Hero"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
               />
+              
             </div>
           </div>
         </section>

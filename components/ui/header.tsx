@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { getUserName } from "@/lib/utils";
+import Image from "next/image";
 import { LogoAndMenu } from "./logoandmenu";
+import { getUserName } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -58,7 +59,7 @@ function UserMenu({ searchParams: { username } }: UserMenuProps): JSX.Element {
           size="icon"
           className="overflow-hidden rounded-full"
         >
-          <img
+          <Image
             src="/userplaceholder.svg"
             width={36}
             height={36}

@@ -1,4 +1,4 @@
-import Brokers from '@/components/brokers'
+import Brokers from '@/components/Brokers/brokers'
 import React from 'react'
 
 const ConnectToBrokers = () => {
