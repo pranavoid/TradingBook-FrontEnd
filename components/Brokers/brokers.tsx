@@ -32,7 +32,7 @@ const Brokers = () => {
         <Card className="relative w-full max-w-md shadow-lg">
           <CardHeader>
             <CardTitle className="mt-6 text-center text-3xl font-bold tracking-tight text-foreground">
-              Connect with Your Broker
+              Connect with your Broker
             </CardTitle>
             <CardDescription className="text-center text-gray-600">
               Login securely to get started.
